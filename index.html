@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Ecommerce Product Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="header-left">
+          <button id="show-nav">
+            <img src="./images/icon-menu.svg" alt="" />
+          </button>
+          <a href="#" class="logo"><img src="./images/logo.svg" alt="" /></a>
+        </div>
+        <div class="header-right">
+          <button id="cart-btn" class="cart-btn">
+            <img id="cart-img" src="./images/icon-cart.svg" alt="" />
+            <span id="cart-badge" class="cart-badge"></span>
+          </button>
+          <button class="avatar-btn">
+            <img class="avatar" src="./images/image-avatar.png" alt="" />
+          </button>
+        </div>
+        <nav id="nav">
+          <div class="nav-left">
+            <button id="close-nav">
+              <img src="./images/icon-close.svg" alt="" />
+            </button>
+            <ul>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="nav-right" id="nav-left"></div>
+        </nav>
+      </header>
+      <div class="cart" id="cart">
+        <h4 class="cart-header">Cart</h4>
+        <div class="cart-empty" id="cart-empty"><p>Your cart is empty.</p></div>
+      </div>
+      <div class="container">
+        <div class="container-left">
+          <div class="img-slider" id="img-slider">
+            <button id="prev-btn">
+              <img
+                src="./images/icon-previous.svg"
+                alt=""
+                width="13"
+                height="18"
+              />
+            </button>
+            <div class="img-container" id="img-container">
+              <img src="./images/image-product-1.jpg" alt="" />
+              <img src="./images/image-product-2.jpg" alt="" />
+              <img src="./images/image-product-3.jpg" alt="" />
+              <img src="./images/image-product-4.jpg" alt="" />
+            </div>
+            <button id="next-btn">
+              <img src="./images/icon-next.svg" alt="" width="13" height="18" />
+            </button>
+          </div>
+          <div class="img-thumbnails">
+            <button
+              onclick="changeHighlightImage(this)"
+              data-image-number="1"
+              class="img-thumbnail-btn"
+            >
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt=""
+                class="thumbnail"
+              />
+            </button>
+            <button
+              onclick="changeHighlightImage(this)"
+              data-image-number="2"
+              class="img-thumbnail-btn"
+            >
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt=""
+                class="thumbnail"
+              />
+            </button>
+            <button
+              onclick="changeHighlightImage(this)"
+              data-image-number="3"
+              class="img-thumbnail-btn"
+            >
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt=""
+                class="thumbnail"
+              />
+            </button>
+            <button
+              onclick="changeHighlightImage(this)"
+              data-image-number="4"
+              class="img-thumbnail-btn"
+            >
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt=""
+                class="thumbnail"
+              />
+            </button>
+          </div>
+        </div>
+        <section>
+          <p class="lead">Sneaker Company</p>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p>
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <div class="price-section">
+            <div class="price-section-left">
+              <h2>$125.00</h2>
+              <span>50%</span>
+            </div>
+            <p class="price-section-right"><s>$250.00</s></p>
+          </div>
+          <div class="cart-section">
+            <div class="cart-section-input">
+              <button id="minus-quantity-btn">
+                <img src="./images/icon-minus.svg" alt="" />
+              </button>
+              <span id="quantity">0</span>
+              <button id="plus-quantity-btn">
+                <img src="./images/icon-plus.svg" alt="" />
+              </button>
+            </div>
+            <button class="primary-btn cart-section-add" id="add-to-cart-btn">
+              <img src="./images/icon-cart.svg" alt="" /> Add to cart
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <div class="light-box" id="light-box">
+      <div class="light-box-main">
+        <img
+          src="./images/image-product-1.jpg"
+          alt=""
+          id="light-box-main-img"
+          data-image-number="1"
+        />
+        <button class="close-btn" id="close-light-box-btn">
+          <img src="./images/icon-close.svg" alt="" />
+        </button>
+        <button
+          id="prev-btn"
+          class="prev-btn img-slide-btn"
+          onclick="showprevImage(this)"
+        >
+          <img src="./images/icon-previous.svg" alt="" width="13" height="18" />
+        </button>
+        <button
+          id="next-btn"
+          class="next-btn img-slide-btn"
+          onclick="shownextImage(this)"
+        >
+          <img src="./images/icon-next.svg" alt="" width="13" height="18" />
+        </button>
+        <div class="light-box-img-thumbnails">
+          <button
+            data-image-number="1"
+            class="light-box-img-thumbnail-btn"
+            onclick="setImage(this)"
+          >
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt=""
+              class="thumbnail"
+            />
+          </button>
+          <button
+            data-image-number="2"
+            class="light-box-img-thumbnail-btn"
+            onclick="setImage(this)"
+          >
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt=""
+              class="thumbnail"
+            />
+          </button>
+          <button
+            data-image-number="3"
+            class="light-box-img-thumbnail-btn"
+            onclick="setImage(this)"
+          >
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt=""
+              class="thumbnail"
+            />
+          </button>
+          <button
+            data-image-number="4"
+            class="light-box-img-thumbnail-btn"
+            onclick="setImage(this)"
+          >
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt=""
+              class="thumbnail"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="notification" class="notification">
+      <p id="notification-content"></p>
+    </div>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
